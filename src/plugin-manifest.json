@@ -3,7 +3,7 @@
   "name": "ChatGPT FAQ Generator",
   "description": "Create FAQ entry for blog post",
   "version": "1.0.0",
-  "repository": "https://git.cdwv.pl/flotiq/flotiq-ui-plugins/chatgpt-faq-generator",
+  "repository": "https://github.com/flotiq/flotiq-ui-plugin-chatgpt-faq-generator",
   "url": "https://localhost:3050/",
   "permissions": [
     {
