@@ -1,0 +1,25 @@
+.plugin-chatgpt-faq label {
+  font-size: 12px;
+  color: #8ea1b8;
+  margin-bottom: 0.25rem;
+}
+
+.mode-dark .plugin-chatgpt-faq label {
+  color: #e5e7eb;
+}
+
+.plugin-chatgpt-faq label > span {
+  color: #eb5757;
+  line-height: 1;
+  user-select: none;
+  margin-left: 0.25rem;
+}
+
+.plugin-chatgpt-faq * {
+  box-sizing: border-box !important;
+}
+
+.plugin-chatgpt-faq .scrollbar-sm::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}

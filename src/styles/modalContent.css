@@ -1,0 +1,85 @@
+.dev form.plugin-chatgpt-faq {
+  max-width: 1024px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+form.plugin-chatgpt-faq {
+  display: flex;
+  flex-direction: column;
+}
+
+.plugin-chatgpt-faq .content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.plugin-chatgpt-faq .settings-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: 1px #dae3f2 solid;
+  background-color: #f8f9fc;
+}
+
+.mode-dark .plugin-chatgpt-faq .settings-field {
+  background-color: #020617;
+  border-color: #1e293b;
+}
+
+.plugin-chatgpt-faq .settings-field .delete {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 10;
+}
+
+.plugin-chatgpt-faq .settings-field .delete svg {
+  height: 0.875rem;
+  color: #141046;
+  opacity: 50%;
+}
+
+.mode-dark .plugin-chatgpt-faq .settings-field .delete svg {
+  color: #e5e7eb;
+}
+
+.plugin-chatgpt-faq .settings-field .delete button:hover:not(:disabled) svg {
+  opacity: 100%;
+}
+
+.plugin-chatgpt-faq .settings-field .inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  padding: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  .plugin-chatgpt-faq .settings-field .inputs {
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+}
+
+.plugin-chatgpt-faq .buttons {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 2.5rem;
+  border: 0 solid #eeeef4;
+  border-top-width: 1px;
+  background-color: white;
+}
+
+.mode-dark .plugin-chatgpt-faq .buttons {
+  border-color: #1e293b;
+  background-color: #111827;
+}

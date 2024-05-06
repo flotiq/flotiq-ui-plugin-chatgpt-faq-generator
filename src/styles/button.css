@@ -1,0 +1,109 @@
+.plugin-chatgpt-faq button,
+.plugin-chatgpt-faq .link-button {
+  all: unset;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+  line-height: 1;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: white;
+}
+
+.plugin-chatgpt-faq button:not(.borderless),
+.plugin-chatgpt-faq .link-button {
+  height: 2.5rem;
+  border: 2px solid #0083fc;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  background-color: #0083fc;
+}
+
+.plugin-chatgpt-faq button.blue:hover {
+  background-color: #015bd7;
+  border-color: #015bd7;
+}
+
+.plugin-chatgpt-faq button.blueBordered,
+.plugin-chatgpt-faq .link-button {
+  background-color: transparent;
+}
+
+.plugin-chatgpt-faq button:not(.blue),
+.plugin-chatgpt-faq .link-button {
+  color: #141046;
+}
+
+.mode-dark .plugin-chatgpt-faq button,
+.mode-dark .plugin-chatgpt-faq .link-button,
+.mode-dark .plugin-chatgpt-faq .link-button:active,
+.mode-dark .plugin-chatgpt-faq .link-button:focus {
+  color: white;
+}
+
+.plugin-chatgpt-faq button.blueBordered:hover,
+.plugin-chatgpt-faq .link-button:hover {
+  background-color: #0083fc;
+  color: white;
+}
+
+.plugin-chatgpt-faq button:disabled {
+  cursor: not-allowed;
+}
+
+.plugin-chatgpt-faq button:disabled:not(.borderless) {
+  background-color: #dae3f2;
+  color: #8ea1b8;
+  border-width: 2px;
+  border-color: #8ea1b8;
+}
+
+.mode-dark .plugin-chatgpt-faq button:disabled:not(.borderless) {
+  background-color: #8ea1b8;
+  color: #475569;
+  border-color: #8ea1b8;
+}
+
+.plugin-chatgpt-faq button.borderless {
+  height: auto;
+  width: fit-content;
+  padding: 0.5rem;
+}
+
+.plugin-chatgpt-faq button.borderless:hover {
+  text-decoration: underline;
+}
+
+.plugin-chatgpt-faq button:focus,
+.plugin-chatgpt-faq .link-button:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  text-decoration: none;
+}
+
+.plugin-chatgpt-faq .link-button {
+  max-width: 100%;
+}
+
+.plugin-chatgpt-faq .link-button:hover,
+.plugin-chatgpt-faq .link-button:active {
+  text-decoration: none;
+}
+
+.plugin-chatgpt-faq .link-button > span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.5;
+  pointer-events: none;
+}

@@ -1,0 +1,57 @@
+.plugin-chatgpt-faq .input-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.plugin-chatgpt-faq .input-container > div {
+  position: relative;
+  width: 100%;
+  background-color: white;
+}
+
+.mode-dark .plugin-chatgpt-faq .input-container > div {
+  background-color: transparent;
+}
+
+.plugin-chatgpt-faq input {
+  all: unset;
+  border: 1px solid #dae3f2;
+  border-radius: 0.5rem;
+  text-overflow: ellipsis;
+  color: #141046;
+  padding: 0 1rem;
+  height: 3rem;
+  width: 100%;
+}
+
+.mode-dark .plugin-chatgpt-faq input {
+  border-color: #334155;
+  color: white;
+}
+
+.plugin-chatgpt-faq input:focus {
+  border: 1px solid #0083fc;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.plugin-chatgpt-faq input:disabled {
+  background-color: #eeeef4;
+}
+
+.mode-dark .plugin-chatgpt-faq input:disabled {
+  background-color: #111827;
+}
+
+.plugin-chatgpt-faq input.error {
+  border-color: #eb5757;
+}
+
+.plugin-chatgpt-faq .input-container .error-text {
+  color: #eb5757;
+  font-size: 12px;
+  margin-top: 0.25rem;
+  line-height: 1;
+  text-align: left;
+}

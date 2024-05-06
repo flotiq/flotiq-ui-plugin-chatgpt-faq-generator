@@ -1,0 +1,27 @@
+.plugin-chatgpt-faq.panel {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  gap: 1.25rem;
+  border-radius: 1rem;
+  background-color: white;
+}
+
+.mode-dark .plugin-chatgpt-faq.panel {
+  background-color: #020617;
+}
+
+@media (min-width: 1536px) {
+  .plugin-chatgpt-faq.panel {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

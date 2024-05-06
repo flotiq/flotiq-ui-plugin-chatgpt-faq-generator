@@ -1,0 +1,9 @@
+{
+    "[css][scss][javascript][typescript][javascriptreact][typescriptreact][json][mdx][html]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "yaml.customTags": [
+        "!reference sequence",
+    ],
+}
