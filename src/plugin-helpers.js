@@ -1,23 +1,18 @@
 const appRoots = {};
 
-export const onElementRemoved = (element, callback) => {
-  new MutationObserver(function () {
-    if (!element.parentElement) {
-      callback();
-      this.disconnect();
-    }
-  }).observe(element.parentElement, { childList: true });
-};
-
 export const addElementToCache = (element, root, key) => {
   appRoots[key] = {
     element,
     root,
   };
 
-  setTimeout(() => {
-    onElementRemoved(element, () => delete appRoots[key]);
-  }, 1);
+  setTimeout(
+    () =>
+      element.addEventListener("flotiq.detached", () => {
+        delete appRoots[key];
+      }),
+    50
+  );
 };
 
 export const getCachedElement = (key) => {
