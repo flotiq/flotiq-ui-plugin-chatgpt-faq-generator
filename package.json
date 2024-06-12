@@ -19,8 +19,9 @@
     "yup": "^1.4.0"
   },
   "scripts": {
-    "start": "cp './src/plugin-manifest.json' './public/plugin-manifest.json' && react-scripts start",
-    "build": "react-scripts build && cp './src/plugin-manifest.json' './build/plugin-manifest.json'",
+    "start": "concurrently \"yarn start:manifest-watch\" \"yarn react-scripts start\"",
+    "start:manifest-watch": "cpx -v ./src/plugin-manifest.json ./public/ --watch",
+    "build": "cpx -v ./src/plugin-manifest.json ./public/ && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -44,6 +45,8 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "prettier": "^3.2.5"
+    "prettier": "^3.2.5",
+    "concurrently": "^8.2.2",
+    "cpx": "^1.5.0"
   }
 }

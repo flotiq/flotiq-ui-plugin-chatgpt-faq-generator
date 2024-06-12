@@ -1,6 +1,6 @@
 import { handlePlugin } from './faq-generator';
 import { handleSettings } from './settings';
-import { registerFn } from './common/plugin-element-cache';
+import { registerFn } from './common/plugin-helpers';
 import pluginInfo from './plugin-manifest.json';
 
 /* eslint import/no-webpack-loader-syntax: off */

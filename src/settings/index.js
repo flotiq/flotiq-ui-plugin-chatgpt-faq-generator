@@ -13,7 +13,7 @@ import {
   addElementToCache,
   getCachedElement,
   removeRoot,
-} from '../common/plugin-element-cache';
+} from '../common/plugin-helpers';
 import i18n from '../i18n';
 
 const ManageContent = ({ plugin, reload, modalInstance, client, toast }) => {
@@ -22,7 +22,7 @@ const ManageContent = ({ plugin, reload, modalInstance, client, toast }) => {
   const formId = plugin.name;
 
   const onSubmit = useCallback(
-    async values => {
+    async (values) => {
       setIsSaving(true);
 
       try {
@@ -72,13 +72,13 @@ const ManageContent = ({ plugin, reload, modalInstance, client, toast }) => {
       validateOnChange
       validateOnBlur
     >
-      <Form className='plugin-chatgpt-faq' id={formId} noValidate>
+      <Form className="plugin-chatgpt-faq" id={formId} noValidate>
         <ApiKeyField disabled={isSaving} />
         <FirstPromptField disabled={isSaving} />
         <SecondPromptField disabled={isSaving} />
         <ModelField disabled={isSaving} />
-        <div className='buttons'>
-          <Button color='blue' type='submit' form={formId} disabled={isSaving}>
+        <div className="buttons">
+          <Button color="blue" type="submit" form={formId} disabled={isSaving}>
             {t('SaveChanges')}
           </Button>
         </div>

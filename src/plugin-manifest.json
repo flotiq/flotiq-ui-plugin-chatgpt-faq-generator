@@ -2,9 +2,9 @@
   "id": "codewave.chatgpt-faq-generator",
   "name": "ChatGPT FAQ Generator",
   "description": "Create FAQ entry for blog post",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": "https://github.com/flotiq/flotiq-ui-plugin-chatgpt-faq-generator",
-  "url": "https://localhost:3050/",
+  "url": "https://localhost:3050/static/js/bundle.js",
   "permissions": [
     {
       "ctdName": "_plugin_settings",

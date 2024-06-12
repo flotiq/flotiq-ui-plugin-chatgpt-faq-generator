@@ -44,8 +44,6 @@ Target content will be added to element `faq` of type list of text elements `que
 
 ### Deployment
 
-<!-- TO DO fix react dev cors -->
-
 1. Open Flotiq editor
-2. Add a new plugin and paste the URL to the hosted `plugin-manifest.json` file (unfortunately you cannot use `https://localhost:3050/plugin-manifest.json` due to CORS issues in the react dev server )
+2. Add a new plugin and paste the URL to the hosted `plugin-manifest.json` file (you can use `https://localhost:3050/plugin-manifest.json` as long as you have accepted self-signed certificate for this url)
 3. Navigate to the view that is modified by the plugin

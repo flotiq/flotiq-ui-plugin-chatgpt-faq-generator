@@ -2,11 +2,7 @@ import ReactDOM from 'react-dom/client';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import Button from '../components/Button/Button';
-import {
-  addElementToCache,
-  getCachedElement,
-} from '../common/plugin-element-cache';
-
+import { addElementToCache, getCachedElement } from '../common/plugin-helpers';
 import getFaqForContent from './get-faq-for-content';
 
 const GenerateFaq = ({ pluginSettings, formik, toast }) => {
@@ -14,7 +10,7 @@ const GenerateFaq = ({ pluginSettings, formik, toast }) => {
 
   const onClick = useCallback(async () => {
     const content = formik.values.content.blocks
-      .map(b => `<p>${b.data.text}</p>`)
+      .map((b) => `<p>${b.data.text}</p>`)
       .join('\n');
     const {
       first_prompt,
@@ -41,7 +37,7 @@ const GenerateFaq = ({ pluginSettings, formik, toast }) => {
   }
 
   return (
-    <div className='plugin-chatgpt-faq'>
+    <div className="plugin-chatgpt-faq">
       <Button type={'button'} onClick={() => onClick()}>
         {t('GenerateFaq')}
       </Button>
