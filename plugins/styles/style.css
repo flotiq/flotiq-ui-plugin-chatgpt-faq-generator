@@ -1,8 +1,34 @@
-@font-face {
-  font-family: "Roboto Mono";
-  src: url(./RobotoMono-Medium.ttf) format("truetype");
+.plugin-chatgpt-faq__button {
+  display: flex;
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  cursor: pointer;
+  width: 2rem;
+  position: absolute;
+  left: -2.5rem;
+  top: 2.5rem;
+  content: url("../../images/pencil-faq-icon.svg");
 }
 
-.plugin-name-cell-renderer {
-  font-family: "Roboto Mono", monospace;
+.plugin-chatgpt-faq__button:hover:not(.plugin-chatgpt-faq__button--loading) {
+  opacity: 50%;
+}
+
+.plugin-chatgpt-faq__button--loading {
+  cursor: default;
+  width: 1.5rem;
+  height: 1.5rem;
+  animation: plugin-chatgpt-faq__icon--spin 1s linear infinite;
+  margin-right: 0.5rem;
+  content: url("../../images/loader-grid.svg");
+}
+
+@keyframes plugin-chatgpt-faq__icon--spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

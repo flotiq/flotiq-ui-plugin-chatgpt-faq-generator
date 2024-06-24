@@ -1,20 +1,39 @@
+import i18n from "../i18n";
 import { registerFn } from "../common/plugin-element-cache";
 import pluginInfo from "../plugin-manifest.json";
 import cssString from "inline:./styles/style.css";
-import { handleGridPlugin } from "./grid-renderers";
+import { handleFormFieldConfig } from "./field-config";
+import { handleSettingsSchema } from "./manage-form";
 
-registerFn(pluginInfo, (handler, client) => {
-  /**
-   * Add plugin styles to the head of the document
-   */
+const loadStyles = () => {
   if (!document.getElementById(`${pluginInfo.id}-styles`)) {
     const style = document.createElement("style");
     style.id = `${pluginInfo.id}-styles`;
     style.textContent = cssString;
     document.head.appendChild(style);
   }
+};
 
-  handler.on("flotiq.grid.cell::render", (data) =>
-    handleGridPlugin(data, client, pluginInfo),
-  );
-});
+registerFn(
+  pluginInfo,
+  (handler, _, { toast, getPluginSettings, getLanguage }) => {
+    loadStyles();
+
+    const language = getLanguage();
+    if (language !== i18n.language) {
+      i18n.changeLanguage(language);
+    }
+
+    handler.on("flotiq.form.field::config", (data) =>
+      handleFormFieldConfig(data, toast, getPluginSettings),
+    );
+    handler.on("flotiq.plugins.manage::form-schema", (data) =>
+      handleSettingsSchema(data),
+    );
+    handler.on("flotiq.language::changed", ({ language }) => {
+      if (language !== i18n.language) {
+        i18n.changeLanguage(language);
+      }
+    });
+  },
+);
