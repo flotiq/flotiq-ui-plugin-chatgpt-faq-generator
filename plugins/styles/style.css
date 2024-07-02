@@ -11,8 +11,13 @@
   content: url("../../images/pencil-faq-icon.svg");
 }
 
+.mode-dark .plugin-chatgpt-faq__button:not(.plugin-chatgpt-faq__button--loading) {
+  filter: invert(0.85)
+}
+
 .plugin-chatgpt-faq__button:hover:not(.plugin-chatgpt-faq__button--loading) {
   opacity: 50%;
+  filter: invert(0.85)
 }
 
 .plugin-chatgpt-faq__button--loading {
