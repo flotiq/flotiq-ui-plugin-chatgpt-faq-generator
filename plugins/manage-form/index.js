@@ -22,7 +22,7 @@ export const handleSettingsSchema = ({ contentTypes, modalInstance }) => {
     const { sourceFieldKeys, targetFieldKeys } = validFields;
     formSchema = {
       options: {
-        disbaledBuildInValidation: true,
+        disabledBuildInValidation: true,
         onValidate: getValidator(sourceFieldKeys, targetFieldKeys),
       },
       schema: getSchema(ctds),
