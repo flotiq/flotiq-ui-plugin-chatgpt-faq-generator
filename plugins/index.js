@@ -4,7 +4,7 @@ import pluginInfo from "../plugin-manifest.json";
 import cssString from "inline:./styles/style.css";
 import { handleFormFieldConfig } from "./field-config";
 import { handleSettingsSchema } from "./manage-form";
-import { handleFormFieldListenrsAdd } from "./field-listeners";
+import { handleFormFieldListenersAdd } from "./field-listeners";
 
 const loadStyles = () => {
   if (!document.getElementById(`${pluginInfo.id}-styles`)) {
@@ -33,7 +33,7 @@ registerFn(
     );
 
     handler.on("flotiq.form.field.listeners::add", (data) =>
-      handleFormFieldListenrsAdd(data),
+      handleFormFieldListenersAdd(data),
     );
 
     handler.on("flotiq.language::changed", ({ language }) => {

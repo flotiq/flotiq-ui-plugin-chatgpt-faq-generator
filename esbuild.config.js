@@ -187,7 +187,7 @@ if (watch) {
   );
 
   console.log(
-    `Manifest file is avaiable at http://${host.replace(
+    `Manifest file is available at http://${host.replace(
       "0.0.0.0",
       "localhost",
     )}:${port}/plugin-manifest.json and https://${host.replace(
