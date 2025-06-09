@@ -5,7 +5,7 @@ import i18n from "../../../i18n";
 const model = "gpt-3.5-turbo";
 const firstPrompt =
   "Read the blog post below and suggest 3 questions that a reader will have that are not answered in the article.";
-const secondPropmpt =
+const secondPrompt =
   "Now answer the questions. Avoid bullet-points." +
   "Print responses with questions in Q&A format with each question and answer in a separate line.";
 
@@ -37,7 +37,7 @@ const getFaqForContent = async (content, api_key) => {
       faqQuestionsCompletion.choices[0].message,
       {
         role: "user",
-        content: secondPropmpt,
+        content: secondPrompt,
       },
     ],
   );

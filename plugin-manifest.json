@@ -1,8 +1,8 @@
 {
   "id": "flotiq.chatgpt-faq-generator",
   "name": "ChatGPT FAQ Generator",
-  "description": "The ChatGTP FAQ Generator plugin automates the creation of FAQs from your content, streamlining the process of generating and saving FAQs to your desired field.",
-  "version": "1.0.2",
+  "description": "The ChatGPT FAQ Generator plugin automates the creation of FAQs from your content, streamlining the process of generating and saving FAQs to your desired field.",
+  "version": "1.0.3",
   "repository": "https://github.com/flotiq/flotiq-ui-plugin-chatgpt-faq-generator",
   "url": "https://localhost:3053/index.js"
 }

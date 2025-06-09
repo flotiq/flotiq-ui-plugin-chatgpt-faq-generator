@@ -1,9 +1,9 @@
 [[_TOC_]]
 
-# ChatGTP FAQ Generator Plugin Documentation
+# ChatGPT FAQ Generator Plugin Documentation
 
 ## Overview
-The ChatGTP FAQ Generator plugin automates the creation of FAQs from your content, streamlining the process of generating and saving FAQs to your desired field.
+The ChatGPT FAQ Generator plugin automates the creation of FAQs from your content, streamlining the process of generating and saving FAQs to your desired field.
 
 ## Usage
 
