@@ -1,7 +1,7 @@
 import { getCachedElement } from "../../../common/plugin-element-cache";
 import { validFieldsCacheKey } from "../../../common/valid-fields";
 
-export const handlePluginFormConfig = ({ name, config, formik }) => {
+export const handlePluginFormConfig = ({ name, config, form }) => {
   const { index, type } =
     name.match(/buttons\[(?<index>\d+)\].(?<type>\w+)/)?.groups || {};
 
@@ -11,7 +11,7 @@ export const handlePluginFormConfig = ({ name, config, formik }) => {
     const { sourceFields, targetFields } =
       getCachedElement(validFieldsCacheKey);
 
-    const ctd = formik.values.buttons[index].content_type;
+    const ctd = form.getValue(`buttons[${index}].content_type`);
 
     config.options =
       type === "source" ? sourceFields?.[ctd] || [] : targetFields?.[ctd] || [];

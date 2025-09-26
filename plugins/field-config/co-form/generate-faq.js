@@ -78,7 +78,7 @@ const getFieldData = (fieldName, contentType) => {
 export const generateFAQ = async ({
   apiKey,
   settings,
-  formik,
+  form,
   contentType,
   toast,
 }) => {
@@ -110,7 +110,7 @@ export const generateFAQ = async ({
     throw new Error(i18n.t("WrongTarget") + i18n.t("AllowedTargets"));
 
   const content = validFields[sourceInputType].getContent(
-    formik.values[source],
+    form.getValue(source),
   );
 
   const faqResponse = await getFaqForContent(content, apiKey);
@@ -118,6 +118,6 @@ export const generateFAQ = async ({
   const faq = validFields[targetInputType].getTargetValue(faqResponse);
 
   toast.success(i18n.t("Generated"));
-  formik.setFieldValue(target, faq);
-  formik.setFieldTouched(target, faq);
+  form.setFieldValue(target, faq);
+  form.setFieldTouched(target, faq);
 };

@@ -6,7 +6,7 @@ import pluginInfo from "../../../plugin-manifest.json";
 import { generateFAQ } from "./generate-faq";
 
 export const handleCoFormConfig = (
-  { contentType, name, config, formik },
+  { contentType, name, config, form },
   apiKey,
   settings,
   toast,
@@ -22,7 +22,7 @@ export const handleCoFormConfig = (
     const buttonData = {
       apiKey,
       settings: targetSettings,
-      formik,
+      form,
       toast,
       contentType,
     };

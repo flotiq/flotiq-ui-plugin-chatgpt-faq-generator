@@ -92,12 +92,6 @@ export const getSchema = (contentTypes) => ({
   },
 });
 
-const addToErrors = (errors, index, field, error) => {
-  if (!errors.buttons) errors.buttons = [];
-  if (!errors.buttons[index]) errors.buttons[index] = {};
-  errors.buttons[index][field] = error;
-};
-
 export const getValidator = (sourceFieldKeys, targetFieldKeys) => {
   const onValidate = (values) => {
     const errors = {};
@@ -108,21 +102,21 @@ export const getValidator = (sourceFieldKeys, targetFieldKeys) => {
 
     values.buttons?.forEach(({ content_type, source, target }, index) => {
       if (!content_type) {
-        addToErrors(errors, index, "content_type", i18n.t("FieldRequired"));
+        errors[`buttons[${index}].content_type`] = i18n.t("FieldRequired");
       }
 
       if (!source) {
-        addToErrors(errors, index, "source", i18n.t("FieldRequired"));
+        errors[`buttons[${index}].source`] = i18n.t("FieldRequired");
       } else if (!(sourceFieldKeys[content_type] || []).includes(source)) {
-        addToErrors(errors, index, "source", i18n.t("WrongSource"));
+        errors[`buttons[${index}].source`] = i18n.t("WrongSource");
       }
 
       if (!target) {
-        addToErrors(errors, index, "target", i18n.t("FieldRequired"));
+        errors[`buttons[${index}].target`] = i18n.t("FieldRequired");
       } else if (!(targetFieldKeys[content_type] || []).includes(target)) {
-        addToErrors(errors, index, "target", i18n.t("WrongTarget"));
+        errors[`buttons[${index}].target`] = i18n.t("WrongTarget");
       } else if (source === target) {
-        addToErrors(errors, index, "target", i18n.t("Unique"));
+        errors[`buttons[${index}].target`] = i18n.t("Unique");
       }
     });
 
